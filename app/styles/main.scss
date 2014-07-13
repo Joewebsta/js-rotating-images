@@ -1,31 +1,29 @@
 body {
-    text-align: center;
+  text-align: center;
+}
+
+img { 
+  max-width: 100%;
+  border: 10px solid #fff;
+
 }
 
 .mountain-bg-color { 
-  background: blue; 
+  background: #4A756E; 
   transition: background-color 1s;
 }
 
 .beach-bg-color { 
-  background: yellow;
+  background: #8D433F;
   transition: background-color 1s; 
 }
 
 .road-bg-color { 
-  background: gray;
+  background: #B7B8BD;
   transition: background-color 1s; 
 }
 
 .city-bg-color { 
-  background: tan;
+  background: #F09729;
   transition: background-color 1s; 
 }
-
-
-
-
-/*.blue {
-    background: blue;
-    transition: background-color 2s;
-}*/
