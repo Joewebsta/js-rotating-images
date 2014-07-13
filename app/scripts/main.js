@@ -1,16 +1,16 @@
 $(document).ready(function() {
 
   var image = document.getElementsByTagName("img")[0],
-      imageHeight = image.height,
-      body = document.getElementsByTagName("body")[0],
-      imageSrc = ["images/beach.png", "images/road.png", "images/city.png", "images/mountain.png"],
-      imageSrcLength = imageSrc.length,
-      bgColorClass = ["beach-bg-color", "road-bg-color", "city-bg-color", "mountain-bg-color"]
-      index = 0,
-      browserHeight = window.innerHeight;
+      index = 0;
+
 
   function rotateImage() {
     
+    var body = document.getElementsByTagName("body")[0],
+        imageSrc = ["images/beach.png", "images/road.png", "images/city.png", "images/mountain.png"],
+        imageSrcLength = imageSrc.length,
+        bgColorClass = ["beach-bg-color", "road-bg-color", "city-bg-color", "mountain-bg-color"];
+
     image.setAttribute("src" , imageSrc[index]);
     body.setAttribute("class", bgColorClass[index]);  
     index++;
@@ -20,12 +20,16 @@ $(document).ready(function() {
     } 
   }
 
+
   function centerVertical() {
-    var marginTop = (browserHeight - (imageHeight + 20))/2;
+    var imageHeight = image.height,
+        browserHeight = window.innerHeight,
+        marginTop = (browserHeight - (imageHeight + 20))/2;
+    
     image.setAttribute("style", "margin-top:" + marginTop + "px");
   }
 
   centerVertical();
+  window.addEventListener("resize", centerVertical, false);
   setInterval(rotateImage, 3000);
-
 });
