@@ -2,10 +2,26 @@ body {
     text-align: center;
 }
 
-.mountain-bg-color { background: blue; }
-.beach-bg-color { background: yellow; }
-.road-bg-color { background: gray; }
-.city-bg-color { background: tan; }
+.mountain-bg-color { 
+  background: blue; 
+  transition: background-color 1s;
+}
+
+.beach-bg-color { 
+  background: yellow;
+  transition: background-color 1s; 
+}
+
+.road-bg-color { 
+  background: gray;
+  transition: background-color 1s; 
+}
+
+.city-bg-color { 
+  background: tan;
+  transition: background-color 1s; 
+}
+
 
 
 

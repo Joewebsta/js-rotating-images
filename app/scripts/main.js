@@ -1,37 +1,21 @@
 $(document).ready(function() {
 
-  var image = document.getElementsByTagName("img")[0];
-  var body = document.getElementsByTagName("body")[0];
-  var imageSrc = ["images/beach.png", "images/road.png", "images/city.png", "images/mountains.png"];
-  var imageSrcLength = imageSrc.length;
-  var imageIndex = 0;
+  var image = document.getElementsByTagName("img")[0],
+      body = document.getElementsByTagName("body")[0],
+      imageSrc = ["images/beach.png", "images/road.png", "images/city.png", "images/mountains.png"],
+      imageSrcLength = imageSrc.length,
+      bgColorClass = ["beach-bg-color", "road-bg-color", "city-bg-color", "mountain-bg-color"]
+      index = 0;
 
   function rotateImage() {
     
-    image.setAttribute("src" , imageSrc[imageIndex]);
-    imageIndex++;
+    image.setAttribute("src" , imageSrc[index]);
+    body.setAttribute("class", bgColorClass[index]);  
+    index++;
 
-    if ( imageIndex >= imageSrcLength ) {
-      imageIndex = 0;
-    }
-
-    if ( imageIndex === 1 ) {
-      
-      body.setAttribute("class", "beach-bg-color");
-
-    } else if ( imageIndex === 2 ) {
-      
-      body.setAttribute("class", "road-bg-color");
-
-    } else if ( imageIndex === 3 ) {
-
-      body.setAttribute("class", "city-bg-color");
-
-    } else {
-
-      body.setAttribute("class", "mountain-bg-color");
-      
-    }
+    if ( index >= imageSrcLength ) {
+      index = 0;
+    } 
   }
 
   setInterval(rotateImage, 3000);
